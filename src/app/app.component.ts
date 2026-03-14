@@ -6,21 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: any = 'sample-angular-app'             
-  unusedVar = 123;;               
+  title = 'sample-angular-app';
+  unusedVar = 123;
 
-  myMethod() {                       
-    return 'hello'
+  myMethod() {
+    return 'hello';
   }
 
-  anotherMethod = () => {            
-    let x = 5
-    let y = 10
-    return x + y
-  title = 'sample-angular-app';
-  myVariable = 123   
+  anotherMethod = () => {
+    let x = 5;
+    let y = 10;
+    return x + y;
+  };
 
-   unusedFunction() {  
+  myVariable = 123;
+
+  unusedFunction() {
     console.log('hello');
   }
 }
