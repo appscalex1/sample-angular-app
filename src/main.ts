@@ -8,5 +8,9 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+// BAD: using eval will trigger Semgrep by default
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err: any) => {
+    eval("console.log('Bootstrap error')"); // ⚠ Semgrep should catch this
+  });

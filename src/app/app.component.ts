@@ -1,15 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <h1>{{title}}</h1>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+  `
 })
-export class AppComponent {
-  title = 'sample-angular-app';
-  myVariable = 123   
+export class AppComponent implements OnInit {
 
-   unusedFunction() {  
-    console.log('hello');
+  title = 'sample-angular-app';
+  counter = 0;
+  name = '';
+
+  ngOnInit() {}
+
+  increment() {
+    this.counter++;
   }
+
+  decrement() {
+    this.counter--;
+  }
+
 }
